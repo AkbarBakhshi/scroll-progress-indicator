@@ -14,31 +14,32 @@ export default class Threejs {
 
         // https://lottiefiles.com/26511-circular-progress
         // https://lottiefiles.com/92752-loader
-
-        LottieInteractivity.create({
-            player: '#horizontalBar',
-            container: ".threejs",
-            mode: 'scroll',
-            actions: [
-                {
-                    visibility: [0.1,.9],
-                    type: 'seek',
-                    frames: [0, 105],
-                },
-            ]
-        });
-        LottieInteractivity.create({
-            player: '#circularProgress',
-            container: ".threejs",
-            mode: 'scroll',
-            actions: [
-                {
-                    visibility: [0.15,0.85],
-                    type: 'seek',
-                    frames: [0, 900],
-                },
-            ]
-        });
+        gsap.delayedCall(0.5, () => {
+            LottieInteractivity.create({
+                player: '#horizontalBar',
+                container: ".threejs",
+                mode: 'scroll',
+                actions: [
+                    {
+                        visibility: [0.1, .9],
+                        type: 'seek',
+                        frames: [0, 105],
+                    },
+                ]
+            });
+            LottieInteractivity.create({
+                player: '#circularProgress',
+                container: ".threejs",
+                mode: 'scroll',
+                actions: [
+                    {
+                        visibility: [0.15, 0.85],
+                        type: 'seek',
+                        frames: [0, 900],
+                    },
+                ]
+            });
+        })
         // return new Promise(resolve => {
         //     gsap.timeline({ onComplete: resolve })
         //         .from('.threejs', { y: '-200%' })
